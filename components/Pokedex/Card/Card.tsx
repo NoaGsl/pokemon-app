@@ -5,11 +5,12 @@ import { getBackGroundColor } from "../../Color/Color_interpretation";
 interface CardProps {
   pokemon: any;
   navigation: any;
+  redirect: string;
 }
 
-export default function Card({ pokemon, navigation }: CardProps) {
+export default function Card({ pokemon, navigation, redirect }: CardProps) {
   function DetailsRedirect() {
-    navigation.navigate("Details", { pokemon });
+    navigation.navigate(redirect, { pokemon });
   }
 
   return (
