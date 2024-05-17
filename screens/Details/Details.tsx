@@ -20,7 +20,7 @@ export default function Details({ route, navigation }: any) {
     if(pokemon.evolution.next?.length > 0){
       setNextEvo(pokemon.evolution.next[0].pokedex_id);
     }
-  }, []);
+  }, [pokemon]);
 
   function NavigateToCombatStats() {
     navigation.navigate("CombatStats", { pokemon });
