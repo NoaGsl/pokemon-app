@@ -8,4 +8,11 @@ export const PokedexStyles = StyleSheet.create({
     justifyContent: "center",
     width: "100%",
   },
+  list: {
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    left: 10,
+  },
+
 });
