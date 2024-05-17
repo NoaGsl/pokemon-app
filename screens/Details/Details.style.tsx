@@ -29,7 +29,7 @@ export const DetailsStyles = StyleSheet.create({
         padding: 20,
         width: "90%",
         alignSelf: "center",
-        height: "80%",
+        height: "85%",
     },
     detailsBox: {
     },
@@ -62,5 +62,14 @@ export const DetailsStyles = StyleSheet.create({
         fontWeight: "bold",
         color: "black",
         textAlign: "center",
+    },
+    CombatStatsButton:{
+        backgroundColor: "black",
+        padding: 10,
+        borderRadius: 10,
+        alignSelf: "center",
+        color: "white",
+        fontWeight: "bold",
+        fontSize: 20,
     },
 });
