@@ -14,10 +14,10 @@ export default function Details({ route, navigation }: any) {
   useEffect(() => {
     setpreEvo(undefined);
     setNextEvo(undefined);
-    if(pokemon.evolution.pre?.length > 0){
+    if(pokemon.evolution?.pre?.length > 0){
       setpreEvo(pokemon.evolution.pre[pokemon.evolution.pre.length - 1].pokedex_id);
     }
-    if(pokemon.evolution.next?.length > 0){
+    if(pokemon.evolution?.next?.length > 0){
       setNextEvo(pokemon.evolution.next[0].pokedex_id);
     }
   }, [pokemon]);
