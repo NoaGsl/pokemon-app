@@ -8,10 +8,7 @@ interface PokedexpProps {
   redirect: string;
 }
 
-export default function Pokedex({
-  navigation,
-  redirect,
-}: PokedexpProps) {
+export default function Pokedex({ navigation, redirect }: PokedexpProps) {
   const [pokemons, setPokemons] = useState<any>([]);
   const [filteredPokemons, setFilteredPokemons] = useState<any>([]);
 
@@ -33,15 +30,21 @@ export default function Pokedex({
   }, []);
   return (
     <View style={PokedexStyles.container}>
-      <TextInput onChangeText={FilterPokemons} placeholder="Rechercher un pokemon" />
-      <FlatList
-        data={filteredPokemons}
-        renderItem={({ item }) => (
-          <Card redirect={redirect} pokemon={item} navigation={navigation} />
-        )}
-        keyExtractor={(item) => item.name.fr}
-        numColumns={2}
+      <TextInput
+        onChangeText={FilterPokemons}
+        placeholder="Rechercher un pokemon"
       />
+      <View style={PokedexStyles.list}>
+        <FlatList
+          showsHorizontalScrollIndicator={false}
+          data={filteredPokemons}
+          renderItem={({ item }) => (
+            <Card redirect={redirect} pokemon={item} navigation={navigation} />
+          )}
+          keyExtractor={(item) => item.name.fr}
+          numColumns={2}
+        />
+      </View>
     </View>
   );
 }
