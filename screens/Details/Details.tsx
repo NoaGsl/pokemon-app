@@ -1,4 +1,4 @@
-import { Image, Text, View } from "react-native";
+import { Image, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { DetailsStyles } from "./Details.style";
 import HomeButton from "../../components/Navigation/HomeButton/HomeButton";
@@ -20,7 +20,11 @@ export default function Details({ route, navigation }: any) {
     if(pokemon.evolution.next?.length > 0){
       setNextEvo(pokemon.evolution.next[0].pokedex_id);
     }
-  }, [pokemon]);
+  }, []);
+
+  function NavigateToCombatStats() {
+    navigation.navigate("CombatStats", { pokemon });
+  }
   
   return (
     <SafeAreaProvider>
@@ -47,6 +51,9 @@ export default function Details({ route, navigation }: any) {
             <Text style={DetailsStyles.details}>Height: {pokemon.height}</Text>
             <Text style={DetailsStyles.details}>Weight: {pokemon.weight}</Text>
             <Text style={DetailsStyles.details}>Catch rate: {pokemon.catch_rate}</Text>
+            <TouchableOpacity onPress={NavigateToCombatStats}>
+              <Text style={DetailsStyles.CombatStatsButton}>see combat stats</Text>
+            </TouchableOpacity>
           </View>
           <View style={DetailsStyles.EvolutionBox}>
             <View style={DetailsStyles.preEvoBox}>
